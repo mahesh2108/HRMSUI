@@ -1,0 +1,46 @@
+<div class="form-froup row">
+  <label class="col-sm-4 col-form-label">Name</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" [(ngModel)]="Name"
+           placeHolder="Enter Employee Name" />
+  </div>
+
+  <label class="col-sm-4 col-form-label">BirthDate</label>
+  <div class="col-sm-6">
+    <!--<input data-provide="datepicker" placeHolder="Enter Birth Date" [(ngModel)]="BirthDate" />-->
+    <input type="datetime" class="datepicker" [(ngModel)]="BirthDate">
+  </div>
+
+  <label class="col-sm-4 col-form-label">TIN</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" [(ngModel)]="TIN"
+           placeHolder="Enter TIN Number" />
+  </div>
+
+  <label class="col-sm-4 col-form-label">Select Employee Type</label>
+  <div class="col-sm-6">
+
+    <select class="form-select" [(ngModel)]="EmployeeType" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option>Regular</option>
+      <option>Contractual</option>
+    </select>
+
+  </div>
+
+  <label class="col-sm-4 col-form-label">Leaves</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" [(ngModel)]="Leaves"
+           placeHolder="Enter TIN Number" />
+  </div>
+
+  <label class="col-sm-4 col-form-label">No of Working Days</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" [(ngModel)]="WorkingDays"
+           placeHolder="Enter TIN Number" />
+  </div>
+  <div class="col-sm-8 ">
+    <button   (click)="addEmployee()" class="btn btn-primary right">Add</button>
+  </div>
+  </div>
+

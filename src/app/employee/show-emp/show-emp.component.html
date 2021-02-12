@@ -1,0 +1,51 @@
+<br/>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)="addClick()" data-backdrop="static" data-keyboard="false" >
+  New Eemployee
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog model-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModelTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-add-edit-emp [emp]="emp" *ngIf="ActivateAddEditEmpComp"></app-add-edit-emp>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>BirthDate</th>
+      <th>TIN</th>
+      <th>EmployeeType</th>
+      <th>Salary</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of EmployeeList">
+      <td>{{dataItem.Name}}</td>
+      <td>{{dataItem.BirthDate}}</td>
+      <td>{{dataItem.TIN}}</td>
+      <td>{{dataItem.EmployeeType}}</td>
+      <td>{{dataItem.Salary}}</td>
+      <td>
+        <button type="button" class="btn btn-light mr-1"
+                (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">
+        Edit 
+        </button>
+        <button type="button" class="btn btn-light mr-1">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
